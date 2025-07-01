@@ -1,2 +1,20 @@
-target/
-.mvn/wrapper/maven-wrapper.jar
+/target/
+*.log
+*.class
+*.jar
+*.war
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS + secrets
+.DS_Store
+Thumbs.db
+.env
+
