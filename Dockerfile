@@ -1,13 +1,11 @@
-# Use official WildFly image with JDK 17
-FROM quay.io/wildfly/wildfly:latest
 
-# Set environment variable for deployment
+FROM quay.io/wildfly/wildfly:latest
 ENV DEPLOY_DIR /opt/jboss/wildfly/standalone/deployments/
 
-# Copy your WAR file into the deployments folder
-COPY target/translator.war ${DEPLOY_DIR}
+# Copy the WAR file into the deployments folder
+COPY target/jakartaee-hello-world.war ${DEPLOY_DIR}
 
-# Expose WildFly's default HTTP port
+# WildFly's default HTTP port
 EXPOSE 8080
 
 # Run WildFly in standalone mode
