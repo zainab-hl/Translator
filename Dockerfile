@@ -1,12 +1,17 @@
 
-FROM quay.io/wildfly/wildfly:latest
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
+WORKDIR /build
+COPY pom.xml .
+COPY src ./src
+
+RUN mvn clean package
+
+FROM quay.io/wildfly/wildfly:27.0.1.Final
 ENV DEPLOY_DIR /opt/jboss/wildfly/standalone/deployments/
 
-# Copy the WAR file into the deployments folder
-COPY target/jakartaee-hello-world.war ${DEPLOY_DIR}
 
-# WildFly's default HTTP port
+COPY --from=builder /build/target/jakartaee-hello-world.war ${DEPLOY_DIR}/ROOT.war
+
 EXPOSE 8080
 
-# Run WildFly in standalone mode
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
