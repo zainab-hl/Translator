@@ -9,7 +9,7 @@ import java.net.URLDecoder;
 
 
 public class translator {
-    private static final String GEMINI_API_KEY = "AIzaSyB7T42XhwUx6B3zUJ0fHLzdzM_c1wo_Y24"; //
+    private static final String GEMINI_API_KEY = System.getenv("GEMINI_API_KEY"); //
     private static final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent";
 
     public String translate(String text) {
