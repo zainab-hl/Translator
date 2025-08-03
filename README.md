@@ -24,5 +24,5 @@ Clone the repository, navigate to the project folder, and run:
 ```
 cmd.exe
 mvnw.cmd clean package
-
+```
 This will generate a WAR file: 
