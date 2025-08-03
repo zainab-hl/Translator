@@ -22,7 +22,6 @@ Make sure you have Java 17 installed.
 Clone the repository, navigate to the project folder, and run:
 
 ```
-cmd.exe
 mvnw.cmd clean package
 ```
 This will generate a WAR file:  target/jakartaee-hello-world.war
