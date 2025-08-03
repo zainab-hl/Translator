@@ -25,4 +25,20 @@ Clone the repository, navigate to the project folder, and run:
 cmd.exe
 mvnw.cmd clean package
 ```
-This will generate a WAR file: 
+This will generate a WAR file:  target/jakartaee-hello-world.war
+Deploy this file to your Jakarta EE runtime (e.g., WildFly).
+
+Usage Example
+Once the service is running (e.g., on http://localhost:8080/jakartaee-hello-world), you can send a request like this:
+You can use Postman or curl to test the /api/translate endpoint.
+```
+curl -X POST http://localhost:8080/jakartaee-hello-world/api/translate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "text": "Salve! Quid agis?"
+}'
+
+```
+{
+  "response": "سلام! كيداير؟"
+}
