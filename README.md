@@ -30,15 +30,17 @@ Deploy this file to your Jakarta EE runtime (e.g., WildFly).
 
 Usage Example
 Once the service is running (e.g., on http://localhost:8080/jakartaee-hello-world), you can send a request like this:
+
 You can use Postman or curl to test the /api/translate endpoint.
+
 ```
 curl -X POST http://localhost:8080/jakartaee-hello-world/api/translate \
   -H "Content-Type: application/json" \
   -d '{
     "text": "Salve! Quid agis?"
 }'
-
 ```
+then you'll get a .json response like this : 
 {
   "response": "سلام! كيداير؟"
 }
